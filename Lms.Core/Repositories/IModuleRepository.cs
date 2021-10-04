@@ -9,12 +9,12 @@ namespace Lms.Core.Repositories
 {
     public interface IModuleRepository
     {
-        Task<IEnumerable<Module>> GetAllModulessAsync();
-        Task<Module> GetModulesAsync(int? id);
+        Task<IEnumerable<Module>> GetAllModuless();
+        Task<Module> GetModules(int? id);
         Task<Module> FindAsync(int? id);
         Task<bool> AnyAsync(int? id);
-        void Add(Module module);
-        void Update(Module module);
-        void Remove(Module module);
+        void Add(Module @module);
+        void Update(Module @module);
+        void Remove(Module @module);
     }
 }

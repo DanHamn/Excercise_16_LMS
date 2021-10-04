@@ -17,9 +17,9 @@ namespace Lms.Data.Repositories
         {
             db = context ?? throw new ArgumentNullException(nameof(db));
         }
-        public void Add(Module module)
+        public void Add(Module @module)
         {
-            db.Add(module);
+            db.Add(@module);
         }
 
         public async Task<bool> AnyAsync(int? id)
@@ -32,25 +32,25 @@ namespace Lms.Data.Repositories
             return await db.Module.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Module>> GetAllModulessAsync()
+        public async Task<IEnumerable<Module>> GetAllModuless()
         {
             return await db.Module.ToListAsync();
         }
 
-        public async Task<Module> GetModulesAsync(int? id)
+        public async Task<Module> GetModules(int? id)
         {
             return await db.Module
                 .FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public void Remove(Module module)
+        public void Remove(Module @module)
         {
-            db.Module.Remove(module);
+            db.Module.Remove(@module);
         }
 
-        public void Update(Module module)
+        public void Update(Module @module)
         {
-            db.Module.Update(module);
+            db.Module.Update(@module);
         }
     }
 }

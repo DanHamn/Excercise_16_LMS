@@ -33,15 +33,15 @@ namespace Lms.Data.Repositories
             return await db.Course.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Course>> GetAllCoursesAsync()
+        public async Task<IEnumerable<Course>> GetAllCourses()
         {
             return await db.Course.ToListAsync();
         }
 
-        public async Task<Course> GetCourseAsync(int? id)
+        public async Task<Course> GetCourse(int? id)
         {
             return await db.Course
-                .FirstOrDefaultAsync(e=>e.Id==id);
+                .FirstOrDefaultAsync(e => e.Id == id);
         }
 
         public void Remove(Course course)
